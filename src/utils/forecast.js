@@ -10,11 +10,7 @@ const forecast = (lat, long, callback) => {
             callback('Bad lat and long', undefined)
         } else {
             callback(undefined,
-                `${body.currently.summary}. The temperature is ${body.currently.temperature}, and there is a ${body.currently.precipProbability}% chance of rain`
-
-                // summary: body.currently.summary,
-                // temperature: body.currently.temperature,
-                // precip: body.currently.precipProbability
+                `${body.daily.data[0].summary}. The temperature is ${body.currently.temperature}, and there is a ${body.currently.precipProbability}% chance of rain`
             )
         }
     })
