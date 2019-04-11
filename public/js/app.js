@@ -1,9 +1,3 @@
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
-    response.json().then((data) => {
-        console.log(data)
-    })
-})
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const htmlLocation = document.querySelector('.location-display')
@@ -17,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     htmlLocation.textContent = "Loading..."
     htmlData.textContent = ''
 
-    fetch(`http://localhost:3000/weather?search=${search.value}`).then((response) => {
+    fetch(`/weather?search=${search.value}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 htmlLocation.textContent = data.error
